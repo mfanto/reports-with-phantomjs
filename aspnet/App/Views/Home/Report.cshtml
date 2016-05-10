@@ -1,0 +1,152 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Report</title>
+    @Styles.Render("~/Content/css")
+    <style>
+        @@media all {
+
+            body {
+                padding: 0 !important;
+            }
+
+            .chart {
+             width: 700px;
+             }
+
+            table.table.table-bordered th {
+                background-color: #2E528B !important;
+                color: white !important;
+            }   
+
+            .m-b-30 {
+                margin-bottom: 30px;
+            }
+        }
+         
+    </style>
+
+</head>
+<body>
+    <div class="container body-content">
+
+        <div class="chart m-b-30">
+            <div id="sales"></div>
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Jan</th>
+                <th>Feb</th>
+                <th>Mar</th>
+                <th>Apr</th>
+                <th>May</th>
+                <th>Jun</th>
+                <th>Jul</th>
+                <th>Aug</th>
+                <th>Sep</th>
+                <th>Oct</th>
+                <th>Nov</th>
+                <th>Dec</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Desktops</td>
+                <td>30</td>
+                <td>32</td>
+                <td>31</td>
+                <td>29</td>
+                <td>25</td>
+                <td>26</td>
+                <td>22</td>
+                <td>21</td>
+                <td>21</td>
+                <td>18</td>
+                <td>23</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>Laptops</td>
+                <td>20</td>
+                <td>30</td>
+                <td>25</td>
+                <td>15</td>
+                <td>19</td>
+                <td>45</td>
+                <td>55</td>
+                <td>60</td>
+                <td>57</td>
+                <td>62</td>
+                <td>68</td>
+                <td>71</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    @Scripts.Render("~/bundles/main")
+
+    <script type="text/javascript">
+        $(function () {
+            $('#sales').highcharts({
+                chart: {
+                    backgroundColor: null,
+                    animation: false,
+                    height: 300
+                },
+                title: {
+                    text: 'Sales'
+                },
+                credits: { enabled: false },
+                xAxis: {
+                    categories: [
+                        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+                    ]
+                },
+                yAxis: {
+                    title: {
+                        text: 'Number of Sales'
+                    },
+                    plotLines: [
+                        {
+                            value: 0,
+                            width: 1,
+                            color: '#808080'
+                        }
+                    ]
+                },
+                plotOptions: {
+                    series: {
+                        animation: false,
+                        EnableMouseTracking: false
+                    }
+                },
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom',
+                    borderWidth: 0
+                },
+                series: [
+                    {
+                        name: 'Desktops',
+                        data: [30, 32, 31, 29, 25, 26, 22, 21, 21, 18, 23, 18]
+                    }, {
+                        name: 'Laptops',
+                        data: [20, 30, 25, 15, 19, 45, 55, 60, 57, 62, 68, 71]
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

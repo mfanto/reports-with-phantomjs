@@ -1,0 +1,27 @@
+{
+  "name": "phantomjs-reporting-service",
+  "version": "1.0.0",
+  "description": "PhantomJS script for generating PDF reports",
+  "main": "./build/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Fanto <mfanto@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "phantomjs-prebuilt": "^2.1.4"
+  },
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mfanto/reporting.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mfanto/reporting/issues"
+  },
+  "homepage": "https://github.com/mfanto/reporting#readme"
+}
